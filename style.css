@@ -512,6 +512,19 @@ h2 {
     /* Navbar styles */
     .navbar {
         flex-direction: column;
+        height: 100px;
+    }
+    
+
+    .logo {
+        display: flex;
+        align-items: center;
+        max-width: 50%;
+        padding-left: 2%;
+    }
+    
+    .logo img {
+        max-width: 100%;
         height: auto;
     }
 
