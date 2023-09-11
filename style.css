@@ -387,7 +387,7 @@ h2 {
 
 .item {
     position: absolute;
-    width: 90%;
+    width: 100%;
     max-width: 450px; 
     height: auto;
     text-align: justify;
@@ -535,6 +535,7 @@ h2 {
         border-radius: 50%; 
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         margin-right: 0;
+        margin-left: 1%;
     }
 
     /* About Me Text styles */
@@ -545,7 +546,7 @@ h2 {
     }
     
     .text-content {
-        max-width: 55%;
+        max-width: 60%;
         margin-left: 4%;
     }
 
@@ -652,7 +653,7 @@ h2 {
     }
 
     .letter {
-        font-size: 22px; 
+        font-size: 20px !important; 
         font-family: 'Georgia', serif; 
         text-decoration: none;
     }
