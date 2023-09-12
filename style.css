@@ -531,7 +531,7 @@ h2 {
     }
 
     .intro-heading {
-        font-size: 10px; 
+        font-size: 14px; 
         display: flex;
         align-items: center; 
         margin: 0; 
@@ -561,7 +561,7 @@ h2 {
     }
     
     .text-content {
-        max-width: 60%;
+        max-width: 50%;
         margin-left: 4%;
     }
 
