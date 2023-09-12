@@ -78,6 +78,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let openedByViewDemo = false; 
 
+    function adjustVideoSize() {
+        // Check the screen width and set values accordingly
+        const maxWidth = window.innerWidth * 0.8; 
+        let videoWidth, videoHeight;
+
+        if (window.innerWidth <= 768) {
+            videoWidth = window.innerWidth * 0.9; 
+            videoHeight = (9 / 16) * videoWidth; // 16:9 aspect ratio
+        } else {
+            videoWidth = maxWidth;
+            videoHeight = (9 / 16) * videoWidth; // 16:9 aspect ratio
+        }
+
+        // Set video width and height
+        demoVideo.style.width = videoWidth + 'px';
+        demoVideo.style.height = videoHeight + 'px';
+    }
+
+    // Initial adjustment on page load
+    adjustVideoSize();
+
+    window.addEventListener("resize", adjustVideoSize);
+
     viewDemoButtons.forEach(function (button) {
         button.addEventListener("click", function () {
             const videoSource = button.getAttribute("data-video");
