@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let videoWidth, videoHeight;
 
         if (window.innerWidth <= 768) {
-            videoWidth = window.innerWidth * 0.9; 
+            videoWidth = maxWidth; 
             videoHeight = (9 / 16) * videoWidth; // 16:9 aspect ratio
         } else {
             videoWidth = maxWidth;
