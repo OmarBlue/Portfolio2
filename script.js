@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Check the screen width and set values accordingly
         const maxWidth = window.innerWidth * 0.8; 
         let videoWidth, videoHeight;
-
+    
         if (window.innerWidth <= 768) {
             videoWidth = maxWidth; 
             videoHeight = (9 / 16) * videoWidth; // 16:9 aspect ratio
@@ -90,10 +90,14 @@ document.addEventListener('DOMContentLoaded', function() {
             videoWidth = maxWidth;
             videoHeight = (9 / 16) * videoWidth; // 16:9 aspect ratio
         }
-
+    
         // Set video width and height
         demoVideo.style.width = videoWidth + 'px';
         demoVideo.style.height = videoHeight + 'px';
+    
+        // Adjust the container's width to maintain the aspect ratio
+        videoContainer.style.width = videoWidth + 'px';
+        videoContainer.style.height = videoHeight + 'px';
     }
 
     // Initial adjustment on page load
@@ -110,8 +114,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 videoContainer.appendChild(closeButton);
 
                 // Play the video
-                demoVideo.style.width = "60vw";
-                demoVideo.style.height = "50vh";
+                demoVideo.style.width = "100%";
+                demoVideo.style.height = "100%";
                 demoVideo.play();
 
                

@@ -480,6 +480,8 @@ h2 {
     transform: translate(-50%, -50%);
     z-index: 1000;
     background-color: rgba(0, 0, 0, 0.9);
+        overflow: hidden;
+    object-fit: contain;
 }
 
 .video-container.active {
@@ -492,6 +494,7 @@ h2 {
     height: 100%;
     transition: all 0.3s ease;
     border-radius: 5px;
+    object-fit: cover;
 }
 
 /* Styling for the close button */
@@ -682,6 +685,8 @@ h2 {
         font-size: 12px !important; 
         font-family: 'Georgia', serif; 
         text-decoration: none;
+        width: 24px;
+        height: 24px;
     }
 
     .view-demo-button {
