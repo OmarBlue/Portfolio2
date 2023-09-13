@@ -26,9 +26,11 @@
     </nav>
 
     <!-- About Me Section -->
+    
     <h1>About Me</h1>
     <section id="about" class="intro">
         <div class="content-wrapper">
+            
             <img id="grad-pic" src="assets/images/graduation.JPG" alt="grad image">
             <div class="text-content">
                 <h1 class="intro-heading">
@@ -212,45 +214,52 @@
     <canvas class="background"></canvas>
     <script src="particles.min.js"></script>
     <script>
-        function initializeParticles() {
-            Particles.init({
-                selector: '.background',
-                maxParticles: 400, 
-                sizeVariations: 3, 
-                color: ['#FAFAFA', '#FAFAFA', '#404040'],
-                connectParticles: true,
-                responsive: [
-                    {
-                        breakpoint: 768,
-                        options: {
-                            maxParticles: 100, 
-                            sizeVariations: 1, 
+        var particleSettings = {
+            selector: '.background',
+            maxParticles: 400,
+            sizeVariations: 3,
+            color: ['#FAFAFA', '#FAFAFA', '#404040'],
+            connectParticles: true,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    options: {
+                        maxParticles: 100,
+                        sizeVariations: 1,
+                        particles: {
+                            speed: 0.5, 
                         },
                     },
-                ],
-                particles: {
-                    color: '#00FC49',
-                    lineLinked: {
-                        enable: true,
-                        distance: 100,
-                        color: '#00FC49',
-                        opacity: 1.0,
-                        width: 2,
-                    },
-                    size: 2,
                 },
-            });
+            ],
+            particles: {
+                color: '#00FC49',
+                lineLinked: {
+                    enable: true,
+                    distance: 100,
+                    color: '#00FC49',
+                    opacity: 1.0,
+                    width: 2,
+                },
+                size: 2,
+                speed: 1,
+            },
+        };
+    
+        function initializeParticles() {
+            Particles.init(particleSettings);
         }
     
-        window.onload = function() {
+        window.onload = function () {
             initializeParticles();
         };
     
-        window.addEventListener('resize', function() {
-            Particles.refresh(); 
+        window.addEventListener('resize', function () {
+            // Reinitialize particles on window resize
+            Particles.init(particleSettings);
         });
     
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             var navbarHeight = document.querySelector('.navbar').offsetHeight;
             var scrollPosition = window.scrollY;
     
@@ -263,6 +272,7 @@
             }
         });
     </script>
+    
    
 
 </body>

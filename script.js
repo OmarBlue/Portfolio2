@@ -1,5 +1,24 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+    // Get all anchor links with the "href" attribute starting with "#"
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+
+    // Loop through each anchor link
+    anchorLinks.forEach(function (link) {
+        // Add a click event listener to prevent default scrolling behavior
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            // Get the target element's ID from the href attribute
+            const targetId = this.getAttribute('href').substring(1);
+
+            // Scroll to the target element smoothly
+            document.getElementById(targetId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+    
     let items = document.querySelectorAll('.slider .item');
     let next = document.getElementById('next');
     let prev = document.getElementById('prev');
