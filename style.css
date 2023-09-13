@@ -283,7 +283,6 @@ body {
     align-items: center;
     margin-right: 0; 
     margin-left : 18%;
-
 }
 
 #grad-pic {
@@ -300,6 +299,7 @@ body {
     flex-grow: 1; 
     max-width: 100%;
     margin-left: 0;
+    padding:0;
 }
 
 .intro-heading {
@@ -321,12 +321,12 @@ body {
 
 #aboutme {
     font-size: 18px;
-    line-height: 1.6; 
+    line-height: 2; 
     color: #DDDDDD;
     text-align: left;
     background-color: rgba(37, 37, 37, 0.9);
     padding: 4%;
-    max-width: 45%;
+    max-width: 60%;
 }
 
 
