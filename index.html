@@ -226,9 +226,6 @@
                     options: {
                         maxParticles: 100,
                         sizeVariations: 1,
-                        particles: {
-                            speed: 0.5, 
-                        },
                     },
                 },
             ],
@@ -242,29 +239,28 @@
                     width: 2,
                 },
                 size: 2,
-                speed: 1,
             },
         };
-    
+
         function initializeParticles() {
             Particles.init(particleSettings);
         }
-    
+
         window.onload = function () {
             initializeParticles();
         };
-    
+
         window.addEventListener('resize', function () {
             // Reinitialize particles on window resize
             Particles.init(particleSettings);
         });
-    
+
         window.addEventListener('scroll', function () {
             var navbarHeight = document.querySelector('.navbar').offsetHeight;
             var scrollPosition = window.scrollY;
-    
+
             var buttons = document.querySelector('.right-buttons');
-    
+
             if (scrollPosition > navbarHeight) {
                 buttons.classList.add('fixed-position');
             } else {
@@ -272,7 +268,7 @@
             }
         });
     </script>
-    
+
    
 
 </body>
