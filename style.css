@@ -306,7 +306,7 @@ body {
 .intro-heading {
     font-size: 36px;
     display: flex;
-    align-items: center; 
+    align-items: center !important; 
     margin: 0; 
 }
 
@@ -698,6 +698,19 @@ h2 {
         text-decoration: none;
         width: 24px;
         height: 24px;
+    }
+
+    button.letter {
+        font-size: 24px; /* Adjust the font size to your preference */
+        font-family: 'Georgia', serif;
+        text-decoration: none;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%; /* Makes the buttons circular */
+        display: flex;
+        justify-content: center; /* Horizontally center text */
+        align-items: center; /* Vertically center text */
+        background-color: #fff; /* Add a background color to cover the circular shape */
     }
 
     .view-demo-button {
