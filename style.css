@@ -210,7 +210,7 @@ body {
 }
 
 .skill:hover {
-    transform: translateY(-5px);
+    transform: scale(1.1) !important;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     background-position: 100% 0;
 }
