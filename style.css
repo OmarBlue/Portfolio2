@@ -619,7 +619,7 @@ h2 {
         width: 60%; 
         max-width: 90%;
         height: auto;
-        text-align: justify;
+        text-align: left;
         background-color: #ffffff;
         border-radius: 10px;
         overflow: hidden;
