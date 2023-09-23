@@ -279,9 +279,12 @@
             initializeParticles();
         };
 
+        let resizeTimeout;
         window.addEventListener('resize', function () {
-            // Reinitialize particles on window resize
-            Particles.init(particleSettings);
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                Particles.init(particleSettings);
+            }, 200);
         });
 
         let scrollTimeout;
