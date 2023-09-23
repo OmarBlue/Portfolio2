@@ -18,7 +18,7 @@
         <div class="logo">
             <img href="#" src="assets/images/Omar_Logo.png" alt="Omar Logo"> 
         </div>
-        <div class="right-buttons">
+        <div class="right-buttons" >
             <a href="#about">About Me</a>
             <a href="#projects">Projects</a>
             <a href="#skills">Skills</a>
@@ -290,6 +290,16 @@
         let scrollTimeout;
 
         window.addEventListener('scroll', function () {
+            var navbarHeight = document.querySelector('.navbar').offsetHeight;
+            var scrollPosition = window.scrollY;
+            var buttons = document.querySelector('.right-buttons');
+
+            if (scrollPosition > navbarHeight) {
+                buttons.classList.add('fixed-position');
+            } else {
+                buttons.classList.remove('fixed-position');
+            }
+
             Particles.pause(); // Assuming 'pause' is a valid function. Adjust accordingly.
             
             clearTimeout(scrollTimeout);
