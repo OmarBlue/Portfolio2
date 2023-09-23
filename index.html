@@ -7,7 +7,8 @@
     <title>Omar Aratuc - Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    
+    <link rel="stylesheet" href="https://cdn.rawgit.com/michalsnik/aos/2.3.1/dist/aos.css" />
+
 </head>
 
 <body>
@@ -187,32 +188,32 @@
     <section id="skills" class="skills-section">
         <h2>Skills</h2>
         <div class="skills-container">
-            <div class="skill">
+            <div class="skill" data-aos="fade-right" data-aos-delay="100" data-aos-duration="800">
                 <i class="fas fa-laptop-code"></i>
                 <h3>Front-end Development</h3>
                 <p>HTML, CSS, JavaScript</p>
             </div>
-            <div class="skill">
+            <div class="skill" data-aos="fade-left" data-aos-delay="100" data-aos-duration="800">
                 <i class="fas fa-server"></i>
                 <h3>Back-end Development</h3>
                 <p>Flask, Django</p>
             </div>
-            <div class="skill">
+            <div class="skill" data-aos="fade-right" data-aos-delay="100" data-aos-duration="800">
                 <i class="fas fa-database"></i>
                 <h3>Database Management</h3>
                 <p>MySQL, MongoDB, SQL</p>
             </div>
-            <div class="skill">
+            <div class="skill" data-aos="fade-left" data-aos-delay="100" data-aos-duration="800">
                 <i class="fas fa-code"></i>
                 <h3>Programming Languages</h3>
                 <p>Python, JavaScript, C, C#</p>
             </div>
-            <div class="skill">
+            <div class="skill" data-aos="fade-right" data-aos-delay="100" data-aos-duration="800">
                 <i class="fas fa-mobile-alt"></i>
                 <h3>Mobile App Development</h3>
                 <p>Swift, XCode, iOS</p>
             </div>
-            <div class="skill">
+            <div class="skill" data-aos="fade-left" data-aos-delay="100" data-aos-duration="800">
                 <i class="fas fa-tools"></i>
                 <h3>Other Skills</h3>
                 <p>Git, RESTful APIs, Web Security</p>
@@ -298,7 +299,10 @@
     </script>
 
    
-
+    <script src="https://cdn.rawgit.com/michalsnik/aos/2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>

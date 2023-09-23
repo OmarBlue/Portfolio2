@@ -185,16 +185,19 @@ body {
 .skill {
     width: calc(33.33% - 20px);
     padding: 20px;
-    background-color: #333;
+    background: linear-gradient(-45deg, #333, #555, #444, #666);
+    background-size: 400% 400%;
+    animation: Gradient 15s ease infinite;
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
 }
 
 .skill i {
     font-size: 40px;
     margin-bottom: 20px;
+    transition: transform 0.2s;
 }
 
 .skill h3 {
@@ -209,6 +212,23 @@ body {
 .skill:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    background-position: 100% 0;
+}
+
+.skill:hover i {
+    transform: scale(1.1);
+}
+
+@keyframes Gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .logo {
