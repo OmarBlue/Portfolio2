@@ -284,17 +284,15 @@
             Particles.init(particleSettings);
         });
 
+        let scrollTimeout;
+
         window.addEventListener('scroll', function () {
-            var navbarHeight = document.querySelector('.navbar').offsetHeight;
-            var scrollPosition = window.scrollY;
-
-            var buttons = document.querySelector('.right-buttons');
-
-            if (scrollPosition > navbarHeight) {
-                buttons.classList.add('fixed-position');
-            } else {
-                buttons.classList.remove('fixed-position');
-            }
+            Particles.pause(); // Assuming 'pause' is a valid function. Adjust accordingly.
+            
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                Particles.play(); // Assuming 'play' is a valid function. Adjust accordingly.
+            }, 200);
         });
     </script>
 
