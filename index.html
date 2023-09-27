@@ -271,28 +271,33 @@
                 size: 2,
             },
         };
-
-        function initializeParticles() {
-            Particles.init(particleSettings);
-        }
-
-        //window.onload = function () {
-           // initializeParticles();
-        //};
-
-        // Cache frequently accessed DOM elements
+    
+        // Initialize the particles
+        Particles.init(particleSettings);
+    
         var navbar = document.querySelector('.navbar');
         var buttons = document.querySelector('.right-buttons');
-
-        // Handle the scroll for other purposes (like your fixed button behavior)
-        window.addEventListener('scroll', function() {
+        var lastScrollY = window.scrollY;
+        var ticking = false;
+    
+        function updatePosition() {
             var navbarHeight = navbar.offsetHeight;
-            var scrollPosition = window.scrollY;
-
-            if (scrollPosition > navbarHeight) {
+    
+            if (lastScrollY > navbarHeight) {
                 buttons.classList.add('fixed-position');
             } else {
                 buttons.classList.remove('fixed-position');
+            }
+    
+            ticking = false;
+        }
+    
+        window.addEventListener('scroll', function() {
+            lastScrollY = window.scrollY;
+    
+            if (!ticking) {
+                window.requestAnimationFrame(updatePosition);
+                ticking = true;
             }
         });
     </script>
