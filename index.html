@@ -279,20 +279,45 @@
             initializeParticles();
         };
 
-        let resizeTimeout;
-        window.addEventListener('resize', function () {
-            clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(() => {
-                Particles.init(particleSettings);
-            }, 200);
-        });
+        // Debounce function
+        function debounce(func, wait) {
+            var timeout;
+            return function() {
+                var context = this, args = arguments;
+                clearTimeout(timeout);
+                timeout = setTimeout(function() {
+                    func.apply(context, args);
+                }, wait);
+            };
+        }
 
-        let scrollTimeout;
+        // Debounce the resize event
+        window.addEventListener('resize', debounce(function() {
+            Particles.init(particleSettings);
+        }, 200));
 
-        window.addEventListener('scroll', function () {
-            var navbarHeight = document.querySelector('.navbar').offsetHeight;
+        // Cache frequently accessed DOM elements
+        var navbar = document.querySelector('.navbar');
+        var buttons = document.querySelector('.right-buttons');
+
+        // Throttle function
+        function throttle(func, limit) {
+            let inThrottle;
+            return function() {
+                const args = arguments;
+                const context = this;
+                if (!inThrottle) {
+                    func.apply(context, args);
+                    inThrottle = true;
+                    setTimeout(() => inThrottle = false, limit);
+                }
+            }
+        }
+
+        // Throttle the scroll event
+        window.addEventListener('scroll', throttle(function() {
+            var navbarHeight = navbar.offsetHeight;
             var scrollPosition = window.scrollY;
-            var buttons = document.querySelector('.right-buttons');
 
             if (scrollPosition > navbarHeight) {
                 buttons.classList.add('fixed-position');
@@ -300,13 +325,12 @@
                 buttons.classList.remove('fixed-position');
             }
 
-            Particles.pause(); // Assuming 'pause' is a valid function. Adjust accordingly.
-            
+            Particles.pause();
             clearTimeout(scrollTimeout);
             scrollTimeout = setTimeout(() => {
-                Particles.play(); // Assuming 'play' is a valid function. Adjust accordingly.
+                Particles.play();
             }, 200);
-        });
+        }, 100)); // 100ms throttle
     </script>
 
    
