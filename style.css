@@ -666,9 +666,12 @@ h2 {
         font-size: 12px;
     }
 
-    #skills {
-        padding-top: 0.4%;
+    #skills h2 {
+        padding-top: 4%;
+    }
 
+    #skills {
+        padding-top: 0;
     }
 
     /* Contact Me Section styles */
